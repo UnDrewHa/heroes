@@ -1,0 +1,416 @@
+color-orange = #ff2800
+
+h300 = height 300px
+h600 = height 600px
+@media (max-width: 600px)
+  h300 = height 150px
+  h600 = height 300px
+
+
+clearfix()
+  zoom 1
+  &:after
+  &:before
+    content ""
+    display table
+  &:after
+    clear both
+
+@keyframes tr {
+  0% {
+    opacity 0
+    transform translateY(100%)
+  }
+  100% {
+    opacity 1
+    transform translateY(0)
+  }
+}
+.k-scope
+  overflow hidden
+  height 100vh
+  width 100%
+  &-header
+    background #12191f
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .75)
+    height 50px
+    position fixed
+    top 0
+    left 0
+    right 0
+    width 100%
+    z-index 100
+
+    @media (max-width: 980px)
+      display none
+
+    &._show
+      opacity 1
+      transform translateY(0)
+
+    .wrapper
+      display flex
+      justify-content space-between
+      align-items center
+      height 50px
+      margin 0 auto
+      width 1030px
+
+    p
+      color #fff
+      font 20px sans
+      margin 0
+
+      a
+        color #fff
+        transition all .4s ease
+        &:hover, &:active
+          color #ff2800
+
+    .header-social
+      height 32px
+      margin 0
+      padding 0
+      width: 185px
+      text-align: right
+
+      li
+        background color-orange
+        border-radius 50%
+        display inline-block
+        height 32px
+        margin 0
+        padding 0
+        list-style none
+        vertical-align top
+        width 32px
+
+        &.fb svg
+          height 18px
+          width 9px
+
+        &.vk svg
+          height 11px
+          width 19px
+
+        &.tw svg
+          height 14px
+          width 17px
+
+        a
+          display flex
+          justify-content center
+          align-items center
+          height 100%
+        svg
+          fill #fff
+      li + li
+        margin 0 0 0 10px
+  &-wrap
+    position absolute
+    top 0
+    left 0
+    height 1800px
+    width 2100px
+  &-block
+    position absolute
+    height 1800px
+    width 2100px
+
+    @media (max-width: 600px)
+      width 1050px
+  &-item
+    box-sizing border-box
+    display block
+    float left
+    border 10px solid #fff
+    position relative
+
+    &._hover
+      img
+        opacity 1
+        transform scale(1.1)
+        transition opacity .8s ease-in-out, transform 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) .4s
+      .item__overlay
+        .item__title
+          transform translate(-6px, -8px)
+          span
+            opacity 1
+          &::before
+            transform translate(6px, 8px)
+            opacity 1
+    &.centerEl
+      border 0
+      img
+        opacity 1
+      &._hover
+        img
+          transform scale(1)
+    img
+      height 100%
+      opacity 0
+      position relative
+      transition opacity .4s ease-in-out, transform .4s ease-in-out 0s
+      width 100%
+      z-index 1
+    .item__wrap-img
+      height: 100%
+      overflow hidden
+      width: 100%
+    .item__overlay
+      position absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      display block
+      height 100%
+      opacity 1
+      transition background .4s ease
+      z-index 2
+
+      .item__date
+        color #ff4800
+        font-size 16px
+        @media (max-width: 600px)
+          font-size: 2vw
+
+      .item__title
+        position absolute
+        bottom -8px
+        left: 0
+        box-sizing border-box
+        color #000
+        display block
+        font 18px sans
+        transition all 0.5s
+        width 90%
+
+        span
+          background: #fff
+          border 1px solid #000
+          display: block
+          padding 5% 6%
+          position: relative
+          opacity 0
+          z-index 5
+        &::before
+          position absolute
+          top: 0
+          left: 0
+          background: #000
+          content ''
+          display: block
+          height: 100%
+          opacity 0
+          transition transform 0.4s ease .1s
+          width: 100%
+          z-index -1
+
+        @media (max-width: 600px)
+          font-size 2.5vw
+          margin-top 1em
+        &._fs16
+          font-size 16px
+          @media (max-width: 600px)
+            font-size 2.2vw
+        &._fs22
+          font-size 22px
+          span
+            padding 4% 5%
+          @media (max-width: 600px)
+            font-size 2.8vw
+        &._fs26
+          font-size 26px
+          span
+            padding 4% 5%
+          @media (max-width: 600px)
+            font-size 3vw
+
+      .item__borders
+        position: absolute;
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        border: 2px solid #fd4d21
+        opacity 0
+        transform: scale(0);
+        transition opacity 0.35s, transform 0.35s
+
+  .grid-sizer
+    width: 14.285714%
+  .item-1
+    .item__wrap-img
+      background url('blocks/i/k/1.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-10
+    .item__wrap-img
+      background url('blocks/i/k/10.jpg') 50% no-repeat
+    height: 600px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 300px
+  .item-11
+    .item__wrap-img
+      background url('blocks/i/k/11.jpg') 50% no-repeat
+    height: 600px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 300px
+  .item-12
+    .item__wrap-img
+      height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-13
+    .item__wrap-img
+      background url('blocks/i/k/13.jpg') 50% no-repeat
+    height: 600px
+    width: 28.571429%
+    @media (max-width: 600px)
+      height: 300px
+  .item-14
+    .item__wrap-img
+      background url('blocks/i/k/14.jpg') 50% no-repeat
+    height: 600px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 300px
+  .item-15
+    .item__wrap-img
+      background url('blocks/i/k/15.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-16
+    .item__wrap-img
+      background url('blocks/i/k/16.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-17
+    .item__wrap-img
+      background url('blocks/i/k/17.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-18
+    .item__wrap-img
+      background url('blocks/i/k/18.jpg') 50% no-repeat
+    height: 600px
+    width: 28.571429%
+    @media (max-width: 600px)
+      height: 300px
+  .item-19
+    .item__wrap-img
+      background url('blocks/i/k/19.jpg') 50% no-repeat
+    height: 300px
+    width: 28.571429%
+    @media (max-width: 600px)
+      height: 150px
+  .item-2
+    .item__wrap-img
+      background url('blocks/i/k/2.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-20
+    .item__wrap-img
+      background url('blocks/i/k/20.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-21
+    .item__wrap-img
+      background url('blocks/i/k/21.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-22
+    .item__wrap-img
+      background url('blocks/i/k/22.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-23
+    .item__wrap-img
+      background url('blocks/i/k/23.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-24
+    .item__wrap-img
+      background url('blocks/i/k/24.jpg') 50% no-repeat
+    height: 300px
+    width: 28.571429%
+    @media (max-width: 600px)
+      height: 150px
+  .item-25
+    .item__wrap-img
+      background url('blocks/i/k/25.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-3
+    .item__wrap-img
+      background url('blocks/i/k/3.jpg') 50% no-repeat
+    height: 300px
+    width: 28.571429%
+    @media (max-width: 600px)
+      height: 150px
+  .item-4
+    .item__wrap-img
+      background url('blocks/i/k/4.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-5
+    .item__wrap-img
+      background url('blocks/i/k/5.jpg') 50% no-repeat
+    height: 600px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 300px
+  .item-6
+    .item__wrap-img
+      background url('blocks/i/k/6.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-7
+    .item__wrap-img
+      background url('blocks/i/k/7.jpg') 50% no-repeat
+    height: 600px
+    width: 28.571429%
+    @media (max-width: 600px)
+      height: 300px
+  .item-8
+    .item__wrap-img
+      background url('blocks/i/k/8.jpg') 50% no-repeat
+    height: 300px
+    width: 14.285714%
+    @media (max-width: 600px)
+      height: 150px
+  .item-9
+    .item__wrap-img
+      background url('blocks/i/k/9.jpg') 50% no-repeat
+    height: 300px
+    width: 28.571429%
+    @media (max-width: 600px)
+      height: 150px
